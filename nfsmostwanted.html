@@ -1,53 +1,48 @@
+
+<!DOCTYPE html>
 <html>
-  <head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Need for Speed: Most Wanted</title>
     <style>
-      body,
-      html {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        background-color: #121212;
-        color: white;
-        font-family: Arial, sans-serif;
-      }
-      #game-container {
-        text-align: center;
-        width: 100%;
-        height: 100%;
-      }
-      #loading-progress {
-        font-size: 18px;
-        margin-top: 20px;
-        padding: 10px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
-        display: inline-block;
-      }
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        #game {
+            width: 100%;
+            height: 100%;
+        }
     </style>
-  </head>
-  <body>
-    <div id="game-container">
-      <div id="game"></div>
-      <div id="loading-progress">Loading: 0/0</div>
-      <div id="first-time">First-time loading may take longer...</div>
-    </div>
-    <script>
-          document.getElementById("loading-progress").remove();
-          document.getElementById("first-time").remove();
-          EJS_player = "#game";
-          EJS_core = "gba";
-          EJS_gameName = "Need For Speed: Most Wanted";
-          EJS_color = "#0064ff";
-          EJS_startOnLoaded = true;
-          EJS_pathtodata = "https://cdn.jsdelivr.net/gh/genizy/emu@master/";
-          EJS_gameUrl = "https://cdn.jsdelivr.net/gh/genizy/emujs@main/nfsmostwanted.zip";
-          const script = document.createElement("script");
-          script.src = "https://cdn.jsdelivr.net/gh/genizy/emu@master/loader.js";
-          document.body.appendChild(script);
-    </script>
-  </body>
+</head>
+<body>
+
+<div id="game"></div>
+
+<script>
+    window.EJS_player = "#game";
+    window.EJS_core = "gba";
+    window.EJS_gameName = "Need for Speed: Most Wanted";
+    window.EJS_color = "#0064ff";
+    window.EJS_startOnLoaded = true;
+
+    // Your own GitHub fork
+    window.EJS_gameUrl =
+        "https://cdn.jsdelivr.net/gh/watermelonsqueaks/emujs@main/nfsmostwanted.zip";
+
+    // Official EmulatorJS CDN
+    window.EJS_pathtodata =
+        "https://cdn.emulatorjs.org/stable/data/";
+</script>
+
+<script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+
+</body>
 </html>
